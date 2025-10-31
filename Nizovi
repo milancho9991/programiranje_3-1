@@ -1,0 +1,56 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        int[,] niz = { { 1, 1, 1 }, { 1, 1, 1 }, { 1, 1, 1 } };
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                Console.Write(niz[i, j] + "\t");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+        niz[1, 0] = 2;
+        niz[1, 1] = 2;
+        niz[1, 2] = 2;
+
+        for (int k = 0; k < 3; k++) {
+            niz[2, k] = 3;
+        }
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                Console.Write(niz[i, j] + "\t");
+            }
+            Console.WriteLine();
+        }
+
+        int zbirDijagonale = 0;
+
+        for (int i = 0; i < 3; i++) {
+            zbirDijagonale = zbirDijagonale + niz[i, i];
+        }
+
+        int zbirKolone = 0;
+
+        for (int i = 0; i < 3; i++)
+        {
+            zbirKolone = zbirKolone + niz[i, 2];
+        }
+
+        int zbirDrugeDijagonale = 0;
+        int k1 = 2;
+        for (int i = 0; i < 3; i++)
+        {
+            zbirDrugeDijagonale = zbirDrugeDijagonale + niz[i, k1];
+            k1 = k1 - 1;
+        }
+
+        Console.WriteLine(zbirDijagonale);
+        Console.WriteLine(zbirKolone);
+        Console.WriteLine(zbirDrugeDijagonale);
+
+        Console.WriteLine("Hello, World!");
+    }
+}
