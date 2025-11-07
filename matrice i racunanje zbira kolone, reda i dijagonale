@@ -1,0 +1,49 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        int[,] matrica = { 
+            { 1, 1, 1, 1 },
+            { 2, 2, 2, 2 },
+            { 3, 3, 3, 3 },
+            { 4, 4, 4, 4 } };
+
+        int zbirK = 0;
+        int zbirR = 0;
+        int zbirD = 0;
+
+
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                Console.Write(matrica[i, j] + "\t");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine("-------------------------");
+
+        for (int i = 0; i < 4; i++)
+        {
+            zbirK += matrica[i, 0];
+        }
+            Console.WriteLine(zbirK);
+
+        Console.WriteLine("--");
+
+        for (int i = 0; i < 4; i++)
+        {
+            zbirR += matrica[0, i];
+        }
+        Console.WriteLine(zbirR);
+
+        Console.WriteLine("--");
+
+        for (int i = 0;i < 4; i++)
+        {
+            zbirD += matrica[i, i];
+        }
+        Console.WriteLine(zbirD);
+
+    }
+}
