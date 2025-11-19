@@ -1,0 +1,44 @@
+using System.Security.Cryptography.X509Certificates;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, World!");
+
+        int[,] matrica = {
+            { 1, 2, 3, 4 },
+            { 5, 6, 7, 8 },
+            { 9, 10, 11, 12 },
+            { 13, 14, 15, 16 }
+        };
+        PrikaziMatricu(matrica);
+
+        for (int i = 0; i < 4; i++)
+        {
+            //matrica[i, 3] += 10;
+            matrica[i,3] = matrica[i,3] + 10;
+        }
+        Console.WriteLine("----------------");
+        PrikaziMatricu(matrica);
+        /*
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                Console.Write(matrica[i, j] + "\t");
+            }
+            Console.WriteLine();
+        }
+        */
+        static void PrikaziMatricu(int[,] m) {
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    Console.Write(m[i, j] + "\t");
+                }
+                Console.WriteLine();
+            }
+        }
+
+    }
+}
